@@ -12,6 +12,7 @@ import android.view.View;
 public class PolyView extends View {
 
     DataController dataController;
+    double degree;
 
     public PolyView(Context context, AttributeSet attr) {
         super(context);
@@ -25,6 +26,7 @@ public class PolyView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         dataController = MainActivity.getDataController();
+        degree = 45;
 
         Point[] points = new Point[4];
 
@@ -67,9 +69,14 @@ public class PolyView extends View {
         //Something's up with this, not drawing a correct polygon
         points[0] = new Point(min, min);
         points[1] = new Point(Math.round(top), min);
+//        points[1] = new Point(Math.round(top)-sin(angle), min);
         points[2] = new Point(Math.round(top), Math.round(right));
         points[3] = new Point(Math.round(bottom), Math.round(right));
         //points[3] = new Point(Math.round(bottom), Math.round(left));
+
+
+//        if(deg > 90) (+)
+//                else (-)
 
 //        points[0] = new Point(100, 100);
 //        points[1] = new Point(250, 100);
@@ -114,5 +121,19 @@ public class PolyView extends View {
         Log.d("result:", String.valueOf(result));
 
         return result;
+    }
+
+    static public Point pointOnGrid(double angle){
+        //This method only works if the top line is horizontal
+
+        Point point = new Point();
+
+        if(angle < 90){
+            //do something
+            point.x =  
+        } else {
+            //do something else
+        }
+
     }
 }
