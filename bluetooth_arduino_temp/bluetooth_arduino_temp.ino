@@ -27,7 +27,8 @@ void loop() {
 
   if (msg == "<turn on>"){
     digitalWrite(ledPin, HIGH); 
-    Serial.println("LED is on"); //Serial.print doesn't seem to work
+    Serial.println(msg); 
+    MyBlue.println("Arduino: Hello from Arduino"); //send to Android
     delay(1000); 
     msg = ""; // reset command
     
