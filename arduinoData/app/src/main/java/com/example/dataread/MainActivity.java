@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     int bufferPosition;
     boolean stopThread;
 
+    String[] tempMsg = new String[8];
+    int count = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -192,24 +195,29 @@ public class MainActivity extends AppCompatActivity {
             {
                 while(!Thread.currentThread().isInterrupted() && !stopThread)
                 {
-                    Log.d("inputStream", "inside thread");
+                    //Log.d("inputStream", "inside thread");
                     try
                     {
                         int byteCount = inputStream.available();
-                        Log.d("inputStream", String.valueOf(byteCount));
+                        //Log.d("inputStream", String.valueOf(byteCount));
                         if(byteCount > 0)
                         {
-                            Log.d("inputStream", "working");
+                            //Log.d("inputStream", "working");
                             byte[] rawBytes = new byte[byteCount];
                             inputStream.read(rawBytes);
                             final String string=new String(rawBytes,"UTF-8");
+                            Log.d("stringData", string);
+
                             handler.post(new Runnable() {
                                 public void run()
                                 {
                                     textView.append(string);
+                                   // tempMsg[0] = textView.getText().toString();
+                                    //textView.append(tempMsg[0]);
+                                    //Log.d("tempMsg", tempMsg[0]);
+
                                 }
                             });
-
                         }
                     }
                     catch (IOException ex)
@@ -217,6 +225,8 @@ public class MainActivity extends AppCompatActivity {
                         stopThread = true;
                     }
                 }
+                count = 0;
+
             }
         });
 
