@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Graph Test App</string>
+    <string name="back">Back</string>
+    <string name="begin">Begin</string>
+    <string name="blankSpace" />
+    <string name="enable_clicking">Enable clicking</string>
+    <string name="enable_clicking2">Enable Clicking Sound</string>
+    <string name="fast_speed">Fast Speed</string>
+    <string name="gltSession">GLT Session</string>
+    <string name="next">Next</string>
+    <string name="participantPrompt">Enter Participant Number:</string>
+    <string name="switchSlide">Switch</string>
+    <string name="training">Training</string>
+    <string name="loading_slides">Loading Slides</string>
+    <string name="title_activity_set_selection">SetSelection</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+</resources>

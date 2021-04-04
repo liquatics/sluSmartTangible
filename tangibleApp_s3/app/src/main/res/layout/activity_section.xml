@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:id="@+id/mainLayout"
+    tools:context=".Activities.SectionActivity">
+
+<!--    <Button-->
+<!--        android:id="@+id/training"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/training"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/gltSession"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/training"-->
+<!--        android:text="@string/gltSession"/>-->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/loading_slides"
+        android:textAlignment="center"
+        android:textSize="75sp" />
+</RelativeLayout>
