@@ -70,11 +70,11 @@ public class QuadAPolygons extends Polygons{
     //*** Whitespace Polygon ***//
     //**************************//
 
-    public static float[][] TA_WHITESPACE = {
-            {0,0},
-            {0,0},
-            {0,0},
-            {0,0}
+    public static float[][] QA_WHITESPACE = {
+            {410,110},
+            {1630,110},
+            {1630,1340},
+            {410,1340}
     };
 
 }

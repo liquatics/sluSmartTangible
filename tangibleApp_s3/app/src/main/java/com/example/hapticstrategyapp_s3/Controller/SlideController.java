@@ -497,19 +497,18 @@ public abstract class SlideController {
     public void reactQuad(int x, int y, Bitmap bitmap, SlideActivity sa, String action, String s){
         if(action == Event.ACTION_TAP){
             checkAreaSpeak(s, sa, y);
-
-            //Color = Red
-            if (sa.getTouchManagement().circleContains(-65536, x, y, bitmap)) {
-                sa.getController().addTouchEvent(x, y, Event.ON_LINE, s, action); //angles
-                if (playTone){
-                    sa.playFreq();
-                    playTone = false;
-                }
-            }
         } else {
-
-            //Color = black
-            if (sa.getTouchManagement().circleContains(-16777216, x, y, bitmap)) {
+            checkAreaSpeak(s, sa, y);
+            if (sa.getTouchManagement().circleContains(-65536, x, y, bitmap)) {
+                //Color = Red
+                sa.getController().addTouchEvent(x, y, Event.ON_LINE, s, action); //angles
+                if (playTone) {
+                    sa.playTing();
+                }
+                sa.startVibration(2);
+                playTone = true;
+            } else if (sa.getTouchManagement().circleContains(-16777216, x, y, bitmap)) {
+                //Color = black
                 sa.getController().addTouchEvent(x, y, Event.ON_LINE, s, action); //1ines
                 sa.startVibration(4);
                 playTone = true;
@@ -518,6 +517,12 @@ public abstract class SlideController {
                 sa.stopVibration();
                 playTone = true;
             }
+        }
+    }
+
+    public void reactWS(int x, int y, Bitmap bitmap, SlideActivity sa){
+        if (sa.getTouchManagement().circleContains(Color.WHITE, x, y, bitmap)) {
+            sa.playClick();
         }
     }
 

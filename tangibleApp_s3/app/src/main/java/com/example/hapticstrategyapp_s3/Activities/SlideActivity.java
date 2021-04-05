@@ -461,7 +461,7 @@ public class SlideActivity extends AppCompatActivity implements View.OnTouchList
 
     public void playTing() {
         if (!ting.isPlaying()) {
-            ting.setVolume(075f, 0.75f);
+            ting.setVolume(0.50f, 0.50f);
             ting.start();
         }
     }
