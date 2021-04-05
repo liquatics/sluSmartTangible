@@ -1,6 +1,7 @@
 package com.example.hapticstrategyapp_s3.Controller;
 
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.util.Log;
 
 import com.example.hapticstrategyapp_s3.Activities.SlideActivity;
@@ -180,6 +181,7 @@ public abstract class SlideController {
             checkAreaSpeak(s, sa, y);
         }
         else{
+            //Color = Red
             if (sa.getTouchManagement().circleContains(-65536, x, y, bitmap)) {
                 sa.getController().addTouchEvent(x, y, Event.ON_LINE, s, action); //dots
                 if (playTone){
@@ -187,6 +189,7 @@ public abstract class SlideController {
                     playTone = false;
                 }
             }
+            //Color = black
             else if (sa.getTouchManagement().circleContains(-16777216, x, y, bitmap)) {
                 sa.getController().addTouchEvent(x, y, Event.ON_LINE, s, action); //1ine set 1
                 sa.startVibration(4);
@@ -487,6 +490,34 @@ public abstract class SlideController {
         else {
             sa.getController().addTouchEvent(x, y, Event.OFF_LINE, Event.AREA_NONE, action);
             sa.stopVibration();
+        }
+    }
+
+    //Can't get tones to play or vibrations to stop when off line
+    public void reactQuad(int x, int y, Bitmap bitmap, SlideActivity sa, String action, String s){
+        if(action == Event.ACTION_TAP){
+            checkAreaSpeak(s, sa, y);
+
+            //Color = Red
+            if (sa.getTouchManagement().circleContains(-65536, x, y, bitmap)) {
+                sa.getController().addTouchEvent(x, y, Event.ON_LINE, s, action); //angles
+                if (playTone){
+                    sa.playFreq();
+                    playTone = false;
+                }
+            }
+        } else {
+
+            //Color = black
+            if (sa.getTouchManagement().circleContains(-16777216, x, y, bitmap)) {
+                sa.getController().addTouchEvent(x, y, Event.ON_LINE, s, action); //1ines
+                sa.startVibration(4);
+                playTone = true;
+            } else {
+                sa.getController().addTouchEvent(x, y, Event.OFF_LINE, s, action);
+                sa.stopVibration();
+                playTone = true;
+            }
         }
     }
 

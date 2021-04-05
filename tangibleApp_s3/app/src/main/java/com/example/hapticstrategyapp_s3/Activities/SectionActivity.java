@@ -31,12 +31,15 @@ public class SectionActivity extends Activity implements View.OnTouchListener {
         View v = findViewById(R.id.mainLayout);
 
         // Set Participant Identification Number (PIN)
-        int pinInteger = 89898989;
-        ExperimentManager.setParticipantID(pinInteger);
-        Log.i("PARTICIPANT", "ID: " + pinInteger);
+        //int pinInteger = 89898989;
+        //ExperimentManager.setParticipantID(pinInteger);
+        //Log.i("PARTICIPANT", "ID: " + pinInteger);
 
         // Start Slide Deck
-        ExperimentManager.setSessionID(1);
+        //ExperimentManager.setSessionID(1);
+
+        int ID = ExperimentManager.getSessionID();
+        Log.d("sessionID: ", String.valueOf(ID));
         goToSlide(ExperimentManager.getParticipantID(), ExperimentManager.getSessionID(), v);
     }
 
@@ -46,16 +49,7 @@ public class SectionActivity extends Activity implements View.OnTouchListener {
         int groupNumber = participantID % 32;
         ExperimentManager.setGroupID(groupNumber);
 
-//        if (sessionNumber == 1) {
-//            System.out.println("GROUP NUMBER: " + groupNumber);
-//            ExperimentManager.setController(new GLTController(sessionNumber, groupNumber));
-//        }
-//        else {
-//            ExperimentManager.setController(new TrainingController(sessionNumber));
-//        }
-
         if (sessionNumber == 1) {
-            //System.out.println("GROUP NUMBER: " + groupNumber);
             ExperimentManager.setController(new SetAController(sessionNumber, groupNumber));
         } else if(sessionNumber == 2){
             ExperimentManager.setController(new SetBController(sessionNumber, groupNumber));

@@ -20,35 +20,37 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <uses-library
-            android:name="com.google.android.wearable"
-            android:required="true" />
+<!--        <uses-library-->
+<!--            android:name="com.google.android.wearable"-->
+<!--            android:required="true" />-->
 
-        <!--
-               Set to true if your app is Standalone, that is, it does not require the handheld
-               app to run.
-        -->
-        <meta-data
-            android:name="com.google.android.wearable.standalone"
-            android:value="true" />
+<!--        &lt;!&ndash;-->
+<!--               Set to true if your app is Standalone, that is, it does not require the handheld-->
+<!--               app to run.-->
+<!--        &ndash;&gt;-->
+<!--        <meta-data-->
+<!--            android:name="com.google.android.wearable.standalone"-->
+<!--            android:value="true" />-->
 
         <activity
-            android:name=".Activities.SetSelection"
-            android:label="@string/title_activity_set_selection">
+            android:name=".Activities.ParticipantID"
+            android:label="ParticipantID">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.SectionActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--        <activity android:name=".Activities.SectionActivity">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Activities.ParticipantID" />
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--        <activity android:name=".Activities.ParticipantID" />-->
+        <activity android:name=".Activities.SetSelection" />
+        <activity android:name=".Activities.SectionActivity" />
         <activity android:name=".Activities.SlideActivity" />
     </application>
 

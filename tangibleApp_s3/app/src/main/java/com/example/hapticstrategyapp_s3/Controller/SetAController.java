@@ -7,8 +7,8 @@ import com.example.hapticstrategyapp_s3.Behavior.ErrorBehavior;
 import com.example.hapticstrategyapp_s3.Behavior.QuadABehavior;
 import com.example.hapticstrategyapp_s3.Behavior.TrapezoidABehavior;
 import com.example.hapticstrategyapp_s3.Behavior.ParallelogramABehavior;
-import com.example.hapticstrategyapp_s3.Behavior.TriangleABehavior;
 import com.example.hapticstrategyapp_s3.Behavior.SlideBehavior;
+import com.example.hapticstrategyapp_s3.ExperimentManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,16 +26,25 @@ public class SetAController extends SlideController{
     }
 
     private void createBehaviors() {
-        setUpSession0();
+        setUpSessionA();
     }
 
     /*
     While this could have possibly been solved more automatically instead of having
     A ton of strings in an array, this was the fastest, most reliable way to do this.
      */
-    public void setUpSession0() {
+    public void setUpSessionA() {
+        // String currentOrdering = slideOrder[0];
 
-        String currentOrdering = slideOrder[0];
+        int participantID = ExperimentManager.getParticipantID();
+        String currentOrdering;
+
+        if (participantID > 50) {
+            currentOrdering = slideOrder[0];
+        }
+        else{
+            currentOrdering = slideOrder[participantID % 10]; //0-9, then start over
+        }
 
         String[] orderingSplit = currentOrdering.split(",");
         Log.i("SlideOrder", "This slide order is: " + orderingSplit);
@@ -51,9 +60,6 @@ public class SetAController extends SlideController{
             }
             else if (s.equals("ParallelogramA")) {
                 sessionA.add(new ParallelogramABehavior(this));
-            }
-            else if (s.equals("TriangleA")) {
-                sessionA.add(new TriangleABehavior(this));
             }
             else if (s.equals("Blank")){
                 sessionA.add(new BlankBehavior(this));
@@ -74,6 +80,15 @@ public class SetAController extends SlideController{
 
 
     String[] slideOrder = {
-            "QuadA,TrapezoidA,ParallelogramA,TrianglA,Blank"
+            "TrapezoidA,QuadA,ParallelogramA,Blank",//0
+            "QuadA,ParallelogramA,TrapezoidA,Blank",
+            "QuadA,TrapezoidA,ParallelogramA,Blank",
+            "ParallelogramA,QuadA,TrapezoidA,Blank",
+            "QuadA,TrapezoidA,ParallelogramA,Blank",
+            "ParallelogramA,QuadA,TrapezoidA,Blank",
+            "ParallelogramA,TrapezoidA,QuadA,Blank",
+            "TrapezoidA,QuadA,ParallelogramA,Blank",
+            "TrapezoidA,ParallelogramA,QuadA,Blank",
+            "ParallelogramA,TrapezoidA,QuadA,Blank" //9
     };
 }

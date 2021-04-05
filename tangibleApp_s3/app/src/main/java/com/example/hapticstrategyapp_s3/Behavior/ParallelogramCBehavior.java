@@ -5,28 +5,28 @@ import android.graphics.Bitmap;
 import com.example.hapticstrategyapp_s3.Activities.SlideActivity;
 import com.example.hapticstrategyapp_s3.Controller.Event;
 import com.example.hapticstrategyapp_s3.Controller.SlideController;
-import com.example.hapticstrategyapp_s3.Polygons.TrapezoidAPolygons;
+import com.example.hapticstrategyapp_s3.Polygons.ParallelogramCPolygons;
 import com.example.hapticstrategyapp_s3.R;
 
-public class TrapezoidABehavior extends SlideBehaviorPolygon {
+public class ParallelogramCBehavior extends SlideBehaviorPolygon {
 
     boolean speak = true;
 
-    public TrapezoidABehavior(SlideController sc) {
-        super(R.drawable.trap_a, sc);
+    public ParallelogramCBehavior(SlideController sc) {
+        super(R.drawable.par_c, sc);
     }
 
     @Override
     public void drawPolygons(SlideActivity sa) {
-        TrapezoidAPolygons poly = new TrapezoidAPolygons();
-        sa.drawPolygon(poly.TA_LINEA);
-        sa.drawPolygon(poly.TA_LINEB);
-        sa.drawPolygon(poly.TA_LINEC);
-        sa.drawPolygon(poly.TA_LINED);
-        sa.drawPolygon(poly.TA_ANGLEA);
-        sa.drawPolygon(poly.TA_ANGLEB);
-        sa.drawPolygon(poly.TA_ANGLEC);
-        sa.drawPolygon(poly.TA_ANGLED);
+        ParallelogramCPolygons poly = new ParallelogramCPolygons();
+        sa.drawPolygon(poly.PC_LINEA);
+        sa.drawPolygon(poly.PC_LINEB);
+        sa.drawPolygon(poly.PC_LINEC);
+        sa.drawPolygon(poly.PC_LINED);
+        sa.drawPolygon(poly.PC_ANGLEA);
+        sa.drawPolygon(poly.PC_ANGLEB);
+        sa.drawPolygon(poly.PC_ANGLEC);
+        sa.drawPolygon(poly.PC_ANGLED);
     }
 
     @Override
@@ -34,30 +34,30 @@ public class TrapezoidABehavior extends SlideBehaviorPolygon {
         int width = bitmap.getWidth();
         String action = Event.ACTION_TAP;
 
-        TrapezoidAPolygons poly = new TrapezoidAPolygons();
+        ParallelogramCPolygons poly = new ParallelogramCPolygons();
 
-        if (poly.inPolygon(poly.TA_LINEA, x, y, width)) {
-            String s = "Line Ei equals 7.5 inches";
+        if (poly.inPolygon(poly.PC_LINEA, x, y, width)) {
+            String s = "Line Ei equals 7 inches";
             sc.reactQuad(x,y,bitmap,sa,action,s);
-        } else if (poly.inPolygon(poly.TA_LINEB, x, y, width)) {
+        } else if (poly.inPolygon(poly.PC_LINEB, x, y, width)) {
             String s = "Line B equals 5.5 inches";
             sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
-        } else if (poly.inPolygon(poly.TA_LINEC, x, y, width)) {
-            String s = "Line C equals 5.5 inches";
+        } else if (poly.inPolygon(poly.PC_LINEC, x, y, width)) {
+            String s = "Line C equals 7 inches";
             sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
-        } else if (poly.inPolygon(poly.TA_LINED, x, y, width)) {
+        } else if (poly.inPolygon(poly.PC_LINED, x, y, width)) {
             String s = "Line D equals 5.5 inches";
             sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
-        } else if (poly.inPolygon(poly.TA_ANGLEA, x, y, width)) {
+        } else if (poly.inPolygon(poly.PC_ANGLEA, x, y, width)) {
             String s = "Angle Ei equals 80 degrees";
             sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
-        } else if (poly.inPolygon(poly.TA_ANGLEB, x, y, width)) {
-            String s = "Angle B equals 80 degrees";
+        } else if (poly.inPolygon(poly.PC_ANGLEB, x, y, width)) {
+            String s = "Angle B equals 100 degrees";
             sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
-        } else if (poly.inPolygon(poly.TA_ANGLEC, x, y, width)) {
-            String s = "Angle C equals 100 degrees";
+        } else if (poly.inPolygon(poly.PC_ANGLEC, x, y, width)) {
+            String s = "Angle C equals 80 degrees";
             sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
-        } else if (poly.inPolygon(poly.TA_ANGLED, x, y, width)) {
+        } else if (poly.inPolygon(poly.PC_ANGLED, x, y, width)) {
             String s = "Angle D equals 100 degrees";
             sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
         }
@@ -72,16 +72,15 @@ public class TrapezoidABehavior extends SlideBehaviorPolygon {
     public void touchReaction(int x, int y, Bitmap bitmap, SlideActivity sa, String action) {
         int width = bitmap.getWidth();
 
-        TrapezoidAPolygons poly = new TrapezoidAPolygons();
+        ParallelogramCPolygons poly = new ParallelogramCPolygons();
 
-        if (poly.inPolygon(poly.TA_LINEA, x, y, width)) {
-            String s = "Line Ei equals 7.5 inches";
+        if (poly.inPolygon(poly.PC_LINEA, x, y, width)) {
+            String s = "Line Ei equals 6 inches";
 
             //Log.d("color: ", String.valueOf(bitmap.getPixel(x,y)));
             sc.reactQuad(x, y, bitmap, sa, action, s);
         }
-
-
     }
+
 
 }

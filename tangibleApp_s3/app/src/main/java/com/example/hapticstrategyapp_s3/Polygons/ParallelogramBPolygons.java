@@ -1,33 +1,33 @@
 package com.example.hapticstrategyapp_s3.Polygons;
 
-public class ParallelogramAPolygons extends Polygons{
+public class ParallelogramBPolygons extends Polygons{
 
     //******************************************//
     //*** Line segments - clockwise from top ***//
     //******************************************//
 
-    public static float[][] PA_LINEA = {
+    public static float[][] PB_LINEA = {
             {0,0},
             {0,0},
             {0,0},
             {0,0}
     };
 
-    public static float[][] PA_LINEB = {
+    public static float[][] PB_LINEB = {
             {0,0},
             {0,0},
             {0,0},
             {0,0}
     };
 
-    public static float[][] PA_LINEC = {
+    public static float[][] PB_LINEC = {
             {0,0},
             {0,0},
             {0,0},
             {0,0}
     };
 
-    public static float[][] PA_LINED = {
+    public static float[][] PB_LINED = {
             {0,0},
             {0,0},
             {0,0},
@@ -38,28 +38,28 @@ public class ParallelogramAPolygons extends Polygons{
     //*** Angles clockwise from top left ***//
     //**************************************//
 
-    public static float[][] PA_ANGLEA = {
+    public static float[][] PB_ANGLEA = {
             {0,0},
             {0,0},
             {0,0},
             {0,0}
     };
 
-    public static float[][] PA_ANGLEB = {
+    public static float[][] PB_ANGLEB = {
             {0,0},
             {0,0},
             {0,0},
             {0,0}
     };
 
-    public static float[][] PA_ANGLEC = {
+    public static float[][] PB_ANGLEC = {
             {0,0},
             {0,0},
             {0,0},
             {0,0}
     };
 
-    public static float[][] PA_ANGLED = {
+    public static float[][] PB_ANGLED = {
             {0,0},
             {0,0},
             {0,0},
@@ -70,12 +70,10 @@ public class ParallelogramAPolygons extends Polygons{
     //*** Whitespace Polygon ***//
     //**************************//
 
-    public static float[][] PA_WHITESPACE = {
+    public static float[][] PB_WHITESPACE = {
             {0,0},
             {0,0},
             {0,0},
             {0,0}
     };
 }
-
-
