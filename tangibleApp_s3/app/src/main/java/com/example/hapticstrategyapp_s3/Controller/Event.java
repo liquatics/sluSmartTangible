@@ -39,6 +39,12 @@ public class Event {
 
     public static final String AREA_NONE = "No Area";
 
+    //Quad study vars
+    public static final String WHITESPACE = "Inside Shape";
+    public static final String ANGLE = "Exploring Angle";
+    public static final String LINE = "Exploring Line";
+    public static final String OUTSIDE = "Outside Shape";
+
     public Event(float x, float y, String status, String voiceArea, String action, int slide,
                  int id, int group, int session) {
         this.uuid = UUID.randomUUID().toString();

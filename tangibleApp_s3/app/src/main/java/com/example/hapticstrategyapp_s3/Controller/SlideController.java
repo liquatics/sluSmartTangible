@@ -113,7 +113,9 @@ public abstract class SlideController {
     }
 
     private void saveCSVFile(String data) {
-        String fileName = ExperimentManager.getParticipantID() + "_" + Constants.DATA_FILE;
+        String fileName = "p_" + ExperimentManager.getParticipantID() +
+                "_s_" + ExperimentManager.getSessionID() +
+                "_" + Constants.DATA_FILE;
 
         File folder = ExperimentManager.getPublicDataStorage("data");
         File file = new File(folder.getAbsolutePath() + File.separator + fileName);
@@ -501,7 +503,7 @@ public abstract class SlideController {
             checkAreaSpeak(s, sa, y);
             if (sa.getTouchManagement().circleContains(-65536, x, y, bitmap)) {
                 //Color = Red
-                sa.getController().addTouchEvent(x, y, Event.ON_LINE, s, action); //angles
+                sa.getController().addTouchEvent(x, y, Event.ANGLE, s, action); //angles
                 if (playTone) {
                     sa.playTing();
                 }
@@ -509,11 +511,11 @@ public abstract class SlideController {
                 playTone = true;
             } else if (sa.getTouchManagement().circleContains(-16777216, x, y, bitmap)) {
                 //Color = black
-                sa.getController().addTouchEvent(x, y, Event.ON_LINE, s, action); //1ines
+                sa.getController().addTouchEvent(x, y, Event.LINE, s, action); //1ines
                 sa.startVibration(4);
                 playTone = true;
             } else {
-                sa.getController().addTouchEvent(x, y, Event.OFF_LINE, s, action);
+                sa.getController().addTouchEvent(x, y, Event.OUTSIDE, s, action);
                 sa.stopVibration();
                 playTone = true;
             }
@@ -521,7 +523,10 @@ public abstract class SlideController {
     }
 
     public void reactWS(int x, int y, Bitmap bitmap, SlideActivity sa){
+        String action = "";
+        String s = "";
         if (sa.getTouchManagement().circleContains(Color.WHITE, x, y, bitmap)) {
+            sa.getController().addTouchEvent(x, y, Event.WHITESPACE, s, action);
             sa.playClick();
         }
     }
