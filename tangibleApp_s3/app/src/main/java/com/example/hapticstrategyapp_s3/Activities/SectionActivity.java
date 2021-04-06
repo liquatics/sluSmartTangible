@@ -12,11 +12,11 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.hapticstrategyapp_s3.Constants;
+import com.example.hapticstrategyapp_s3.Controller.QuadTrainingController;
 import com.example.hapticstrategyapp_s3.Controller.SetAController;
 import com.example.hapticstrategyapp_s3.Controller.SetBController;
 import com.example.hapticstrategyapp_s3.Controller.SetCController;
-import com.example.hapticstrategyapp_s3.Controller.TrainingController;
-import com.example.hapticstrategyapp_s3.Controller.GLTController;
+import com.example.hapticstrategyapp_s3.Controller.TransformController;
 import com.example.hapticstrategyapp_s3.ExperimentManager;
 import com.example.hapticstrategyapp_s3.R;
 
@@ -49,12 +49,16 @@ public class SectionActivity extends Activity implements View.OnTouchListener {
         int groupNumber = participantID % 32;
         ExperimentManager.setGroupID(groupNumber);
 
-        if (sessionNumber == 1) {
+        if (sessionNumber == 0){
+            ExperimentManager.setController(new QuadTrainingController(sessionNumber, groupNumber));
+        } else if (sessionNumber == 1) {
             ExperimentManager.setController(new SetAController(sessionNumber, groupNumber));
-        } else if(sessionNumber == 2){
+        } else if(sessionNumber == 2) {
             ExperimentManager.setController(new SetBController(sessionNumber, groupNumber));
-        } else {
+        } else if(sessionNumber == 3){
             ExperimentManager.setController(new SetCController(sessionNumber, groupNumber));
+        } else {
+            ExperimentManager.setController(new TransformController(sessionNumber, groupNumber));
         }
 
 

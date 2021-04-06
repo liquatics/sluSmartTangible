@@ -21,7 +21,14 @@ public class SetSelection extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_selection);
 
-        //ExperimentManager not setting sessionID?
+        Button setTrainingButton = findViewById(R.id.training_btn);
+        setTrainingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExperimentManager.setSessionID(0);
+                startActivity((new Intent(getApplicationContext(), SectionActivity.class)));
+            }
+        });
 
         Button setAButton = findViewById(R.id.setA_btn);
         setAButton.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +55,15 @@ public class SetSelection extends Activity {
             @Override
             public void onClick(View view) {
                 ExperimentManager.setSessionID(3);
+                startActivity((new Intent(getApplicationContext(), SectionActivity.class)));
+            }
+        });
+
+        Button setTransformButton = findViewById(R.id.transform_btn);
+        setTransformButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExperimentManager.setSessionID(4);
                 startActivity((new Intent(getApplicationContext(), SectionActivity.class)));
             }
         });
