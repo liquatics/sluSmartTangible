@@ -80,15 +80,15 @@ public class SetCController extends SlideController{
 
 
     String[] slideOrder = {
-            "QuadC,TrapezoidC,ParallelogramC,Clank", //0
-            "QuadC,ParallelogramC,TrapezoidC,Clank",
-            "ParallelogramC,TrapezoidC,QuadC,Clank",
-            "QuadC,TrapezoidC,ParallelogramC,Clank",
-            "ParallelogramC,QuadC,TrapezoidC,Clank",
-            "TrapezoidC,ParallelogramC,QuadC,Clank",
-            "TrapezoidC,QuadC,ParallelogramC,Clank",
-            "ParallelogramC,TrapezoidC,QuadC,Clank",
-            "ParallelogramC,QuadC,TrapezoidC,Clank",
-            "TrapezoidC,QuadC,ParallelogramC,Clank" //9
+            "QuadC,TrapezoidC,ParallelogramC,Blank", //0 - test participant
+            "QuadC,ParallelogramC,TrapezoidC,Blank",
+            "ParallelogramC,TrapezoidC,QuadC,Blank",
+            "QuadC,TrapezoidC,ParallelogramC,Blank",
+            "ParallelogramC,QuadC,TrapezoidC,Blank",
+            "TrapezoidC,ParallelogramC,QuadC,Blank",
+            "TrapezoidC,QuadC,ParallelogramC,Blank",
+            "ParallelogramC,TrapezoidC,QuadC,Blank",
+            "ParallelogramC,QuadC,TrapezoidC,Blank",
+            "TrapezoidC,QuadC,ParallelogramC,Blank" //9
     };
 }
