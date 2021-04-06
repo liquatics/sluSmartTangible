@@ -80,7 +80,7 @@ public class SetCController extends SlideController{
 
 
     String[] slideOrder = {
-            "QuadC,TrapezoidC,ParallelogramC,Blank", //0 - test participant
+            "ParallelogramC,QuadC,TrapezoidC,Blank", //0 - test participant
             "QuadC,ParallelogramC,TrapezoidC,Blank",
             "ParallelogramC,TrapezoidC,QuadC,Blank",
             "QuadC,TrapezoidC,ParallelogramC,Blank",
