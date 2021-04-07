@@ -19,16 +19,16 @@ public class TrapezoidCBehavior extends SlideBehaviorPolygon {
 
     @Override
     public void drawPolygons(SlideActivity sa) {
-        TrapezoidCPolygons poly = new TrapezoidCPolygons();
-        sa.drawPolygon(poly.TC_LINEA);
-        sa.drawPolygon(poly.TC_LINEB);
-        sa.drawPolygon(poly.TC_LINEC);
-        sa.drawPolygon(poly.TC_LINED);
-        sa.drawPolygon(poly.TC_ANGLEA);
-        sa.drawPolygon(poly.TC_ANGLEB);
-        sa.drawPolygon(poly.TC_ANGLEC);
-        sa.drawPolygon(poly.TC_ANGLED);
-        sa.drawPolygon(poly.TC_WHITESPACE);
+//        TrapezoidCPolygons poly = new TrapezoidCPolygons();
+//        sa.drawPolygon(poly.TC_LINEA);
+//        sa.drawPolygon(poly.TC_LINEB);
+//        sa.drawPolygon(poly.TC_LINEC);
+//        sa.drawPolygon(poly.TC_LINED);
+//        sa.drawPolygon(poly.TC_ANGLEA);
+//        sa.drawPolygon(poly.TC_ANGLEB);
+//        sa.drawPolygon(poly.TC_ANGLEC);
+//        sa.drawPolygon(poly.TC_ANGLED);
+//        sa.drawPolygon(poly.TC_WHITESPACE);
     }
 
     @Override

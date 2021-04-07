@@ -18,16 +18,16 @@ public class ParallelogramBBehavior extends SlideBehaviorPolygon {
 
     @Override
     public void drawPolygons(SlideActivity sa) {
-        ParallelogramBPolygons poly = new ParallelogramBPolygons();
-        sa.drawPolygon(poly.PB_LINEA);
-        sa.drawPolygon(poly.PB_LINEB);
-        sa.drawPolygon(poly.PB_LINEC);
-        sa.drawPolygon(poly.PB_LINED);
-        sa.drawPolygon(poly.PB_ANGLEA);
-        sa.drawPolygon(poly.PB_ANGLEB);
-        sa.drawPolygon(poly.PB_ANGLEC);
-        sa.drawPolygon(poly.PB_ANGLED);
-        sa.drawPolygon(poly.PB_WHITESPACE);
+//        ParallelogramBPolygons poly = new ParallelogramBPolygons();
+//        sa.drawPolygon(poly.PB_LINEA);
+//        sa.drawPolygon(poly.PB_LINEB);
+//        sa.drawPolygon(poly.PB_LINEC);
+//        sa.drawPolygon(poly.PB_LINED);
+//        sa.drawPolygon(poly.PB_ANGLEA);
+//        sa.drawPolygon(poly.PB_ANGLEB);
+//        sa.drawPolygon(poly.PB_ANGLEC);
+//        sa.drawPolygon(poly.PB_ANGLED);
+//        sa.drawPolygon(poly.PB_WHITESPACE);
     }
 
     @Override

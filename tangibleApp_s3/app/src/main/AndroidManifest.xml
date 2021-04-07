@@ -32,9 +32,7 @@
 <!--            android:name="com.google.android.wearable.standalone"-->
 <!--            android:value="true" />-->
 
-        <activity
-            android:name=".Activities.ParticipantID"
-            android:label="ParticipantID">
+        <activity android:name=".Activities.ParticipantID">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

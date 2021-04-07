@@ -20,16 +20,16 @@ public class QuadABehavior extends SlideBehaviorPolygon {
 
     @Override
     public void drawPolygons(SlideActivity sa) {
-        QuadAPolygons poly = new QuadAPolygons();
-        sa.drawPolygon(poly.QA_LINEA);
-        sa.drawPolygon(poly.QA_LINEB);
-        sa.drawPolygon(poly.QA_LINEC);
-        sa.drawPolygon(poly.QA_LINED);
-        sa.drawPolygon(poly.QA_ANGLEA);
-        sa.drawPolygon(poly.QA_ANGLEB);
-        sa.drawPolygon(poly.QA_ANGLEC);
-        sa.drawPolygon(poly.QA_ANGLED);
-        sa.drawPolygon(poly.QA_WHITESPACE);
+//        QuadAPolygons poly = new QuadAPolygons();
+//        sa.drawPolygon(poly.QA_LINEA);
+//        sa.drawPolygon(poly.QA_LINEB);
+//        sa.drawPolygon(poly.QA_LINEC);
+//        sa.drawPolygon(poly.QA_LINED);
+//        sa.drawPolygon(poly.QA_ANGLEA);
+//        sa.drawPolygon(poly.QA_ANGLEB);
+//        sa.drawPolygon(poly.QA_ANGLEC);
+//        sa.drawPolygon(poly.QA_ANGLED);
+//        sa.drawPolygon(poly.QA_WHITESPACE);
     }
 
     @Override
