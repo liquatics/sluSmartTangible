@@ -509,8 +509,12 @@ public abstract class SlideController {
                 }
                 sa.startVibration(2);
                 playTone = true;
-            } else if (sa.getTouchManagement().circleContains(-16777216, x, y, bitmap) ||
-                    (sa.getTouchManagement().circleContains(-16448251, x, y, bitmap))) {
+            } else if (sa.getTouchManagement().circleContains(-16777216, x, y, bitmap)) {
+                //Color = black
+                sa.getController().addTouchEvent(x, y, Event.LINE, s, action); //1ines
+                sa.startVibration(4);
+                playTone = true;
+            } else if (sa.getTouchManagement().circleContains(-16448251, x, y, bitmap)) {
                 //Color = black
                 sa.getController().addTouchEvent(x, y, Event.LINE, s, action); //1ines
                 sa.startVibration(4);

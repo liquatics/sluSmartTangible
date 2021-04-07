@@ -18,16 +18,16 @@ public class QuadTrainingBehavior extends SlideBehaviorPolygon {
 
     @Override
     public void drawPolygons(SlideActivity sa) {
-        QuadTrainingPolygons poly = new QuadTrainingPolygons();
-        sa.drawPolygon(poly.QT_LINEA);
-        sa.drawPolygon(poly.QT_LINEB);
-        sa.drawPolygon(poly.QT_LINEC);
-        sa.drawPolygon(poly.QT_LINED);
-        sa.drawPolygon(poly.QT_ANGLEA);
-        sa.drawPolygon(poly.QT_ANGLEB);
-        sa.drawPolygon(poly.QT_ANGLEC);
-        sa.drawPolygon(poly.QT_ANGLED);
-        sa.drawPolygon(poly.QT_WHITESPACE);
+//        QuadTrainingPolygons poly = new QuadTrainingPolygons();
+//        sa.drawPolygon(poly.QT_LINEA);
+//        sa.drawPolygon(poly.QT_LINEB);
+//        sa.drawPolygon(poly.QT_LINEC);
+//        sa.drawPolygon(poly.QT_LINED);
+//        sa.drawPolygon(poly.QT_ANGLEA);
+//        sa.drawPolygon(poly.QT_ANGLEB);
+//        sa.drawPolygon(poly.QT_ANGLEC);
+//        sa.drawPolygon(poly.QT_ANGLED);
+//        sa.drawPolygon(poly.QT_WHITESPACE);
     }
 
     @Override
@@ -65,6 +65,9 @@ public class QuadTrainingBehavior extends SlideBehaviorPolygon {
             sc.reactQuad(x, y, bitmap, sa, action, s);
         } else if (poly.inPolygon(poly.QT_WHITESPACE, x, y, width)) {
             sc.reactWS(x, y, bitmap, sa);
+        } else {
+            String s = "";
+            sc.reactQuad(x, y, bitmap, sa, action, s);
         }
 
     }
