@@ -113,8 +113,8 @@ public abstract class SlideController {
     }
 
     private void saveCSVFile(String data) {
-        String fileName = "p_" + ExperimentManager.getParticipantID() +
-                "_s_" + ExperimentManager.getSessionID() +
+        String fileName = "p" + ExperimentManager.getParticipantID() +
+                "_set" + ExperimentManager.getSessionID() +
                 "_" + Constants.DATA_FILE;
 
         File folder = ExperimentManager.getPublicDataStorage("data");
@@ -515,6 +515,8 @@ public abstract class SlideController {
                 sa.getController().addTouchEvent(x, y, Event.LINE, s, action); //1ines
                 sa.startVibration(4);
                 playTone = true;
+            } else if (sa.getTouchManagement().circleContains(-1, x, y, bitmap)){
+                sa.stopVibration();
             } else {
                 sa.getController().addTouchEvent(x, y, Event.OUTSIDE, s, action);
                 sa.stopVibration();

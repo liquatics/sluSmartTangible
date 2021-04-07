@@ -27,6 +27,7 @@ public class TrapezoidBBehavior extends SlideBehaviorPolygon {
         sa.drawPolygon(poly.TB_ANGLEB);
         sa.drawPolygon(poly.TB_ANGLEC);
         sa.drawPolygon(poly.TB_ANGLED);
+        sa.drawPolygon(poly.TB_WHITESPACE);
     }
 
     @Override
@@ -37,29 +38,31 @@ public class TrapezoidBBehavior extends SlideBehaviorPolygon {
         TrapezoidBPolygons poly = new TrapezoidBPolygons();
 
         if (poly.inPolygon(poly.TB_LINEA, x, y, width)) {
-            String s = "Line Ei equals 5.5 inches";
+            String s = "Horizontal Line, Ei, B, 5.5 inches";
             sc.reactQuad(x,y,bitmap,sa,action,s);
         } else if (poly.inPolygon(poly.TB_LINEB, x, y, width)) {
-            String s = "Line B equals 5.75 inches";
-            sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
+            String s = "Diagonal Line, B, C, 5.75 inches";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
         } else if (poly.inPolygon(poly.TB_LINEC, x, y, width)) {
-            String s = "Line C equals 7.2 inches";
-            sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
+            String s = "Horizontal Line, C, D, 7.2 inches";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
         } else if (poly.inPolygon(poly.TB_LINED, x, y, width)) {
-            String s = "Line D equals 5.5 inches";
-            sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
+            String s = "Vertical Line, D, Ei, 5.5 inches";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
         } else if (poly.inPolygon(poly.TB_ANGLEA, x, y, width)) {
-            String s = "Angle Ei equals 90 degrees";
-            sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
+            String s = "Angle Ei, 90 degrees";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
         } else if (poly.inPolygon(poly.TB_ANGLEB, x, y, width)) {
-            String s = "Angle B equals 110 degrees";
-            sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
+            String s = "Angle B, 110 degrees";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
         } else if (poly.inPolygon(poly.TB_ANGLEC, x, y, width)) {
-            String s = "Angle C equals 70 degrees";
-            sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
+            String s = "Angle C, 70 degrees";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
         } else if (poly.inPolygon(poly.TB_ANGLED, x, y, width)) {
-            String s = "Angle D equals 90 degrees";
-            sc.reactAreaThenLinegraphNoRepeat(x,y,bitmap,sa,action,s);
+            String s = "Angle D, 90 degrees";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
+        } else if (poly.inPolygon(poly.TB_WHITESPACE, x, y, width)) {
+            sc.reactWS(x,y,bitmap,sa);
         }
     }
 
@@ -75,10 +78,31 @@ public class TrapezoidBBehavior extends SlideBehaviorPolygon {
         TrapezoidBPolygons poly = new TrapezoidBPolygons();
 
         if (poly.inPolygon(poly.TB_LINEA, x, y, width)) {
-            String s = "Line Ei equals 5.5 inches";
-
-            //Log.d("color: ", String.valueOf(bitmap.getPixel(x,y)));
-            sc.reactQuad(x, y, bitmap, sa, action, s);
+            String s = "Horizontal Line, Ei, B, 5.5 inches";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
+        } else if (poly.inPolygon(poly.TB_LINEB, x, y, width)) {
+            String s = "Diagonal Line, B, C, 5.75 inches";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
+        } else if (poly.inPolygon(poly.TB_LINEC, x, y, width)) {
+            String s = "Horizontal Line, C, D, 7.2 inches";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
+        } else if (poly.inPolygon(poly.TB_LINED, x, y, width)) {
+            String s = "Vertical Line, D, Ei, 5.5 inches";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
+        } else if (poly.inPolygon(poly.TB_ANGLEA, x, y, width)) {
+            String s = "Angle Ei, 90 degrees";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
+        } else if (poly.inPolygon(poly.TB_ANGLEB, x, y, width)) {
+            String s = "Angle B, 110 degrees";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
+        } else if (poly.inPolygon(poly.TB_ANGLEC, x, y, width)) {
+            String s = "Angle C, 70 degrees";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
+        } else if (poly.inPolygon(poly.TB_ANGLED, x, y, width)) {
+            String s = "Angle D, 90 degrees";
+            sc.reactQuad(x,y,bitmap,sa,action,s);
+        } else if (poly.inPolygon(poly.TB_WHITESPACE, x, y, width)) {
+            sc.reactWS(x,y,bitmap,sa);
         }
 
 
