@@ -65,6 +65,8 @@ public class TrapezoidABehavior extends SlideBehaviorPolygon {
             sc.reactQuad(x, y, bitmap, sa, action, s);
         } else if (poly.inPolygon(poly.TA_WHITESPACE, x, y, width)) {
             sc.reactWS(x, y, bitmap, sa);
+        } else {
+            sc.reactNothing(x, y, bitmap, sa);
         }
     }
 
@@ -105,6 +107,8 @@ public class TrapezoidABehavior extends SlideBehaviorPolygon {
             sc.reactQuad(x, y, bitmap, sa, action, s);
         } else if (poly.inPolygon(poly.TA_WHITESPACE, x, y, width)) {
             sc.reactWS(x, y, bitmap, sa);
+        } else {
+            sc.reactNothing(x, y, bitmap, sa);
         }
 
 

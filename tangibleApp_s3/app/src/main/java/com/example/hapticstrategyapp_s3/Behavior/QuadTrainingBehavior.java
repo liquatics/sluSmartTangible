@@ -66,8 +66,7 @@ public class QuadTrainingBehavior extends SlideBehaviorPolygon {
         } else if (poly.inPolygon(poly.QT_WHITESPACE, x, y, width)) {
             sc.reactWS(x, y, bitmap, sa);
         } else {
-            String s = "";
-            sc.reactQuad(x, y, bitmap, sa, action, s);
+            sc.reactNothing(x, y, bitmap, sa);
         }
 
     }
@@ -112,6 +111,8 @@ public class QuadTrainingBehavior extends SlideBehaviorPolygon {
             sc.reactQuad(x, y, bitmap, sa, action, s);
         } else if (poly.inPolygon(poly.QT_WHITESPACE, x, y, width)) {
             sc.reactWS(x, y, bitmap, sa);
+        } else {
+            sc.reactNothing(x, y, bitmap, sa);
         }
 
     }

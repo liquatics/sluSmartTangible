@@ -539,6 +539,13 @@ public abstract class SlideController {
         }
     }
 
+    public void reactNothing(int x, int y, Bitmap bitmap, SlideActivity sa){
+        if (sa.getTouchManagement().circleContains(Color.WHITE, x, y, bitmap)) {
+            sa.stopVibration();
+        }
+
+    }
+
     abstract public List<SlideBehavior> getSlideArray(int session);
 
     public SlideBehavior getSlideBehavior() {

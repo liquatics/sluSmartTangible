@@ -66,6 +66,8 @@ public class ParallelogramCBehavior extends SlideBehaviorPolygon {
             sc.reactQuad(x,y,bitmap,sa,action,s);
         } else if (poly.inPolygon(poly.PC_WHITESPACE, x, y, width)) {
             sc.reactWS(x, y, bitmap, sa);
+        } else {
+            sc.reactNothing(x, y, bitmap, sa);
         }
     }
 
@@ -106,6 +108,8 @@ public class ParallelogramCBehavior extends SlideBehaviorPolygon {
             sc.reactQuad(x,y,bitmap,sa,action,s);
         } else if (poly.inPolygon(poly.PC_WHITESPACE, x, y, width)) {
             sc.reactWS(x, y, bitmap, sa);
+        } else {
+            sc.reactNothing(x, y, bitmap, sa);
         }
     }
 
