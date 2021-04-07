@@ -531,6 +531,7 @@ public abstract class SlideController {
         if (sa.getTouchManagement().circleContains(Color.WHITE, x, y, bitmap)) {
             sa.getController().addTouchEvent(x, y, Event.WHITESPACE, s, action);
             sa.playClick();
+            sa.stopVibration();
         }
     }
 
